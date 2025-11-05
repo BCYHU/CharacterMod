@@ -1,17 +1,14 @@
 package mymod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mymod.character.MyCharacter;
 import mymod.util.CardStats;
 
-public class Defend extends BaseCard{
-    public static final String ID = makeID(Defend.class.getSimpleName());
+public class Defend_V extends BaseCard{
+    public static final String ID = makeID(Defend_V.class.getSimpleName());
     private static final CardStats info=new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
@@ -22,7 +19,7 @@ public class Defend extends BaseCard{
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
 
-    public Defend(){
+    public Defend_V(){
         super(ID,info);
         setBlock(BLOCK,UPG_BLOCK);
 
@@ -38,6 +35,6 @@ public class Defend extends BaseCard{
 
     @Override
     public AbstractCard makeCopy() { //Optional
-        return new Defend();
+        return new Defend_V();
     }
 }

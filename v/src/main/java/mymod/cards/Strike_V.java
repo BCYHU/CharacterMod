@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mymod.character.MyCharacter;
 import mymod.util.CardStats;
 
-public class Strike extends BaseCard{
-    public static final String ID = makeID(Strike.class.getSimpleName());
+public class Strike_V extends BaseCard{
+    public static final String ID = makeID(Strike_V.class.getSimpleName());
     private static final CardStats info=new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
@@ -21,7 +21,7 @@ public class Strike extends BaseCard{
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
 
-    public Strike(){
+    public Strike_V(){
         super(ID,info);
         setDamage(DAMAGE,UPG_DAMAGE);
 
@@ -39,6 +39,6 @@ public class Strike extends BaseCard{
 
     @Override
     public AbstractCard makeCopy() { //Optional
-        return new Strike();
+        return new Strike_V();
     }
 }

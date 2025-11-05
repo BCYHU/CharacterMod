@@ -33,8 +33,8 @@ import java.util.*;
 
 @SpireInitializer
 public class BasicMod implements
-        EditCharactersSubscriber,
         EditCardsSubscriber,
+        EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,

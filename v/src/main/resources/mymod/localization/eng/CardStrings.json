@@ -10,11 +10,11 @@
       "Blizzard is a good example for this."
     ]
   },
-  "${modID}:Strike": {
+  "${modID}:Strike_V": {
     "NAME": "Strike",
     "DESCRIPTION": " deal !D! damage."
   },
-  "${modID}:Defend": {
+  "${modID}:Defend_V": {
     "NAME": "Defend",
     "DESCRIPTION": " gain !B! block."
   }

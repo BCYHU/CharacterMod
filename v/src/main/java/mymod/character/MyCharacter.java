@@ -23,9 +23,11 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import mymod.BasicMod;
-import mymod.cards.Defend;
+import mymod.cards.Defend_V;
 
 import java.util.ArrayList;
+
+import static mymod.BasicMod.modID;
 
 public class MyCharacter extends CustomPlayer {
     //Stats
@@ -138,14 +140,10 @@ public class MyCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Strike_Red.ID);
-        retVal.add(Strike_Red.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Neutralize.ID);
-        retVal.add(Defend.ID);
-
-
+        for(int x = 0; x < 3; x++){
+            retVal.add(modID+":Strike_V");
+            retVal.add(modID+":Defend_V");
+        }
         return retVal;
     }
 
