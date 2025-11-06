@@ -11,11 +11,15 @@
     ]
   },
   "${modID}:Strike_V": {
-    "NAME": "Strike",
+    "NAME": "打击",
     "DESCRIPTION": " deal !D! damage."
   },
   "${modID}:Defend_V": {
-    "NAME": "Defend",
+    "NAME": "防御",
     "DESCRIPTION": " gain !B! block."
+  },
+  "${modID}:Undisputed":{
+    "NAME": "无可争议！",
+    "DESCRIPTION": "喵喵喵"
   }
 }

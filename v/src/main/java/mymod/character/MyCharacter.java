@@ -144,6 +144,7 @@ public class MyCharacter extends CustomPlayer {
             retVal.add(modID+":Strike_V");
             retVal.add(modID+":Defend_V");
         }
+        retVal.add(modID+":Undisputed");
         return retVal;
     }
 

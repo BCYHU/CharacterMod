@@ -1,8 +1,8 @@
 {
   "${modID}:CharacterID": {
     "NAMES": [
-      "V",
-      "the Name (but 'the' is lowercase, this is displayed at the top left during gameplay)"
+      "Berserk-V",
+      "Berserk-V"
     ],
     "TEXT": [
       "Line #1 of character select description. NL Line 2 of character select description.",

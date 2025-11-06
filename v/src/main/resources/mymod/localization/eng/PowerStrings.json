@@ -4,5 +4,11 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+  "${modID}:Raging": {
+    "NAME": "暴走",
+    "DESCRIPTIONS": [
+      "You are in 'Fury Mode'."
+    ]
   }
 }
