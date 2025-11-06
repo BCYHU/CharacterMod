@@ -6,9 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import mymod.character.MyCharacter;
 import mymod.powers.FuryMode;
 import mymod.util.CardStats;
@@ -22,26 +20,26 @@ public class Undisputed extends BaseCard{
             CardTarget.SELF,
             0
     );
-    private static final int DAMAGE = 5;
+
 
 
     public Undisputed(){
         super(ID,info);
-        setDamage(DAMAGE);
+        this.baseMagicNumber=2;
+        this.magicNumber=this.baseMagicNumber;
+
 
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m){
-        addToBot(new DamageAction(p,new DamageInfo(p,this.damage,DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.POISON));
-        addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)p,(AbstractCreature)p,(AbstractPower)new FuryMode((AbstractCreature)p,1),1));
+        addToBot(new ApplyPowerAction(p,p,new FuryMode(p,this.magicNumber),this.magicNumber));
     }
     @Override
     public void upgrade(){
         if(!this.upgraded){
             upgradeName();
-            upgradeDamage(-2);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
