@@ -4,13 +4,13 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import mymod.character.MyCharacter;
+import mymod.character.V;
 import mymod.util.CardStats;
 
 public class Defend_V extends BaseCard{
     public static final String ID = makeID(Defend_V.class.getSimpleName());
     private static final CardStats info=new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            V.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.SELF,

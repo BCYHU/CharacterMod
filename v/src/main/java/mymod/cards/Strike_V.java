@@ -6,13 +6,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import mymod.character.MyCharacter;
+import mymod.character.V;
 import mymod.util.CardStats;
 
 public class Strike_V extends BaseCard{
     public static final String ID = makeID(Strike_V.class.getSimpleName());
     private static final CardStats info=new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            V.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.BASIC,
             CardTarget.ENEMY,

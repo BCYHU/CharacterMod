@@ -10,8 +10,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
-import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -23,13 +21,12 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import mymod.BasicMod;
-import mymod.cards.Defend_V;
 
 import java.util.ArrayList;
 
 import static mymod.BasicMod.modID;
 
-public class MyCharacter extends CustomPlayer {
+public class V extends CustomPlayer {
     //Stats
     public static final int ENERGY_PER_TURN = 3;
     public static final int MAX_HP = 70;
@@ -80,7 +77,7 @@ public class MyCharacter extends CustomPlayer {
         }
 
         public static void registerCharacter() {
-            BaseMod.addCharacter(new MyCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
+            BaseMod.addCharacter(new V(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
         }
     }
 
@@ -117,7 +114,7 @@ public class MyCharacter extends CustomPlayer {
 
     //Actual character class code below this point
 
-    public MyCharacter() {
+    public V() {
         super(getNames()[0], Meta.YOUR_CHARACTER,
                 new CustomEnergyOrb(orbTextures, BasicMod.characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
                 new SpriterAnimation(BasicMod.characterPath("animation/default.scml"))); //Animation
@@ -256,6 +253,6 @@ public class MyCharacter extends CustomPlayer {
     @Override
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
-        return new MyCharacter();
+        return new V();
     }
 }

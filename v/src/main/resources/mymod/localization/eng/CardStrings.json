@@ -21,5 +21,9 @@
   "${modID}:Undisputed":{
     "NAME": "无可争议！",
     "DESCRIPTION":"获得 !M! 层 ${modID}:暴走 。"
+  },
+  "${modID}:AutoIterative": {
+    "NAME": "自动迭代",
+    "DESCRIPTION": "移除弃牌堆中的一张牌,升级抽牌堆中的随机一张牌。结束你的回合，并跳过你的下回合。 消耗 "
   }
 }

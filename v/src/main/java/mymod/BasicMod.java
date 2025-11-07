@@ -4,7 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import mymod.cards.BaseCard;
-import mymod.character.MyCharacter;
+import mymod.character.V;
 import mymod.util.GeneralUtils;
 import mymod.util.KeywordInfo;
 import mymod.util.Sounds;
@@ -54,7 +54,7 @@ public class BasicMod implements
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
         new BasicMod();
-        MyCharacter.Meta.registerColor();
+        V.Meta.registerColor();
     }
 
     public BasicMod() {
@@ -277,7 +277,7 @@ public class BasicMod implements
 
     @Override
     public void receiveEditCharacters() {
-        MyCharacter.Meta.registerCharacter();
+        V.Meta.registerCharacter();
 
     }
 
