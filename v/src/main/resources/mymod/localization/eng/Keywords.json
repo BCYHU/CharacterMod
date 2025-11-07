@@ -27,5 +27,12 @@
     ],
     "DESCRIPTION": "Using the COLOR field, this keyword is colored pink instead of the normal keyword color.",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "暴走",
+    "NAMES": [
+      "暴走"
+    ],
+    "DESCRIPTION": "每当你打出一张攻击牌时，获得临时力量。在下回合时流失生命。"
   }
 ]

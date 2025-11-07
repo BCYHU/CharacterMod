@@ -5,10 +5,16 @@
       "You are Very Cool and Strong."
     ]
   },
-  "${modID}:Raging": {
+  "${modID}:FuryMode": {
     "NAME": "暴走",
     "DESCRIPTIONS": [
-      "You are in 'Fury Mode'."
+      "你每打出 #b1 张攻击牌，获得 #b1 点 #y临时力量 。下回合开始时流失 #b1 点生命",
+      "你每打出 #b1 ",
+      "张攻击牌，获得 #b",
+      " 点 #y临时力量 ",
+      "，下回合开始时流失 #b",
+      " 点生命。",
+      "最大可叠加5层。"
     ]
   }
 }

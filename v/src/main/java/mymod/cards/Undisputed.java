@@ -40,8 +40,8 @@ public class Undisputed extends BaseCard{
     public void upgrade(){
         if(!this.upgraded){
             upgradeName();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeMagicNumber(1);
+
         }
     }
 
