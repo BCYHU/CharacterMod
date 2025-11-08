@@ -2,9 +2,12 @@ package mymod;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+
 import basemod.interfaces.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import mymod.cards.BaseCard;
 import mymod.character.V;
+import mymod.relics.BeamSlice;
 import mymod.util.GeneralUtils;
 import mymod.util.KeywordInfo;
 import mymod.util.Sounds;
@@ -35,6 +38,7 @@ import java.util.*;
 public class BasicMod implements
         EditCardsSubscriber,
         EditCharactersSubscriber,
+        EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
@@ -44,6 +48,8 @@ public class BasicMod implements
     static { loadModInfo(); }
     private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
+
+
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
@@ -288,4 +294,11 @@ public class BasicMod implements
                 .setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards(); //Adds the cards
     }
+
+    @Override
+    public void receiveEditRelics() {
+        BaseMod.addRelicToCustomPool((AbstractRelic) new BeamSlice(),V.Meta.CARD_COLOR);
+
+    }
 }
+

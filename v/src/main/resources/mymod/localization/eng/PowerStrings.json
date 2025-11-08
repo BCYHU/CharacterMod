@@ -16,5 +16,11 @@
       " 点生命。",
       "最大可叠加5层。"
     ]
+  },
+  "${modID}:AutoIterativePower": {
+    "NAME": "自动迭代",
+    "DESCRIPTIONS": [
+      "跳过你的下一回合。"
+    ]
   }
 }

@@ -3,6 +3,7 @@ package mymod.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import mymod.BasicMod;
 import mymod.util.CardStats;
 import mymod.util.TriFunction;
@@ -699,4 +700,5 @@ public abstract class BaseCard extends CustomCard {
             return forceModified || base != value;
         }
     }
+
 }

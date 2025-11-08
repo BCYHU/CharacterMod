@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mymod.ModTag;
 import mymod.character.V;
 import mymod.util.CardStats;
 
@@ -27,6 +28,8 @@ public class Strike_V extends BaseCard{
 
         tags.add(CardTags.STARTER_STRIKE);
         tags.add(CardTags.STRIKE);
+        tags.add(ModTag.Card_v);
+
 
     }
 

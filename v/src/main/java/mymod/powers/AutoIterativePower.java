@@ -1,10 +1,11 @@
 package mymod.powers;
 
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+
 
 import static mymod.BasicMod.makeID;
 
@@ -14,10 +15,10 @@ public class AutoIterativePower extends BasePower {
 
     public AutoIterativePower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
-
+        this.description = powerString.DESCRIPTIONS[0];
     }
     public void atStartOfTurn(){
-        //
-
+        addToBot(new PressEndTurnButtonAction());
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner,POWER_ID));
     }
 }
