@@ -35,16 +35,18 @@ public class BeamSlice extends CustomRelic {
         if(isV(c)){
             this.counter++;
 
-            if(this.counter==4){
-                this.counter=0;
-                flash();
-                this.pulse=false;
-            }else if(this.counter==3){
-                beginPulse();
+            if(this.counter==2){
                 this.pulse=true;
+                beginPulse();
+
+            }else if(this.counter==3){
+                this.pulse=false;
                 AbstractDungeon.player.hand.refreshHandLayout();
                 addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new PenNibPower(AbstractDungeon.player,1),1,true));
+
+                this.counter=0;
+                flash();
             }
         }else{
             this.counter=0;

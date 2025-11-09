@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mymod.ModTag;
 import mymod.character.V;
 import mymod.powers.FuryMode;
 import mymod.util.CardStats;
@@ -25,7 +26,7 @@ public class Undisputed extends BaseCard{
         super(ID,info);
         this.baseMagicNumber=2;
         this.magicNumber=this.baseMagicNumber;
-
+        tags.add(ModTag.Card_v);
     }
 
     @Override

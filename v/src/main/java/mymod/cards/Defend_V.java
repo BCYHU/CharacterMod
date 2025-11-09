@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mymod.ModTag;
 import mymod.character.V;
 import mymod.util.CardStats;
 
@@ -24,7 +25,7 @@ public class Defend_V extends BaseCard{
         setBlock(BLOCK,UPG_BLOCK);
 
         tags.add(CardTags.STARTER_DEFEND);
-
+        tags.add(ModTag.Card_v);
 
     }
 
