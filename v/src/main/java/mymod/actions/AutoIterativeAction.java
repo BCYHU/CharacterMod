@@ -45,8 +45,9 @@ public class AutoIterativeAction extends AbstractGameAction {
                 for (AbstractCard c : this.player.drawPile.group)
                     cardsToRemove.add(c);
                 for (AbstractCard c : cardsToRemove) {
-                    this.player.drawPile.removeCard(c);
                     this.player.masterDeck.removeCard(c);
+                    this.player.drawPile.removeCard(c);
+
                 }
                 this.isDone = true;
                 return;
@@ -72,8 +73,9 @@ public class AutoIterativeAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                this.player.drawPile.removeCard(c);
                 this.player.masterDeck.removeCard(c);
+                this.player.drawPile.removeCard(c);
+
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             AbstractDungeon.player.hand.refreshHandLayout();

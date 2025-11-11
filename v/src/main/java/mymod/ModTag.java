@@ -7,4 +7,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 public class ModTag {
     @SpireEnum
     public static AbstractCard.CardTags Card_v;
+    public static AbstractCard.CardTags Card_R_0;
+    public static AbstractCard.CardTags Card_MonteCristo;
 }

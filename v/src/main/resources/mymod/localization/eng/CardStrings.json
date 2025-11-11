@@ -25,5 +25,13 @@
   "${modID}:AutoIterative": {
     "NAME": "自动迭代",
     "DESCRIPTION": "移除手牌中1张牌。 NL 升级抽牌堆中随机1张牌。 NL 结束你的回合。 NL 跳过你的下回合。 NL 消耗 "
+  },
+  "${modID}:ArrowStorm":{
+    "NAME": "箭雨风暴",
+    "DESCRIPTION": " ${modID}:阿尔-零号机 NL 随机造成 !D! 点伤害并给予1层 虚弱 。 NL 重复 !M! 次。 消耗 "
+  },
+  "${modID}:Albatross":{
+    "NAME": "零式飞翼-炮击",
+    "DESCRIPTION": " ${modID}:阿尔-零号机 NL 对最后方敌人造成 !D! 点伤害， NL 并使其失去 !M! 点力量。"
   }
 }
