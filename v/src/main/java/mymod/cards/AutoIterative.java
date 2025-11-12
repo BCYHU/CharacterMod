@@ -16,7 +16,7 @@ public class AutoIterative extends BaseCard{
     public static final CardStats info = new CardStats(
             V.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.RARE,
+            CardRarity.COMMON,
             CardTarget.SELF,
             3
     );

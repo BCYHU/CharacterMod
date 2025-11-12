@@ -4,8 +4,11 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 
 import basemod.interfaces.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import mymod.cards.BaseCard;
+import mymod.cards.ExtremeWindBlade;
 import mymod.character.V;
 import mymod.relics.BeamSlice;
 import mymod.util.GeneralUtils;
@@ -42,6 +45,9 @@ public class BasicMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
+        //mod
+        OnCardUseSubscriber,
+        OnStartBattleSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -299,6 +305,19 @@ public class BasicMod implements
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool((AbstractRelic) new BeamSlice(),V.Meta.CARD_COLOR);
 
+    }
+
+    @Override
+    public void receiveCardUsed(AbstractCard Card) {
+        if(Card.hasTag(ModTag.Card_v)){
+            ExtremeWindBlade.onCardUsedWithTag();
+        }
+    }
+
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        ExtremeWindBlade.resetTriggerCount();
     }
 }
 

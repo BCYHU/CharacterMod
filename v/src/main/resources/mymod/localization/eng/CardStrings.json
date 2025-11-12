@@ -33,5 +33,9 @@
   "${modID}:Albatross":{
     "NAME": "零式飞翼-炮击",
     "DESCRIPTION": " ${modID}:阿尔-零号机 NL 对最后方敌人造成 !D! 点伤害， NL 并使其失去 !M! 点力量。"
+  },
+  "${modID}:ExtremeWindBlade":{
+    "NAME": "极-斩月",
+    "DESCRIPTION": " ${modID}:蒙泰终极型 NL 对全部敌人造成 !D! 点伤害 !B! 次。在手牌时每打出一张V的牌则增加 !M! 点伤害。"
   }
 }
