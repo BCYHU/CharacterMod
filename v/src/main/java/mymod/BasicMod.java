@@ -47,7 +47,7 @@ public class BasicMod implements
         AddAudioSubscriber,
         //mod
         OnCardUseSubscriber,
-        OnStartBattleSubscriber,
+        OnPlayerTurnStartSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -316,7 +316,7 @@ public class BasicMod implements
 
 
     @Override
-    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+    public void receiveOnPlayerTurnStart() {
         ExtremeWindBlade.resetTriggerCount();
     }
 }

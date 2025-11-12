@@ -20,12 +20,12 @@ public class ArrowStorm extends BaseCard{
     private static final CardStats info = new CardStats(
             V.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.ALL_ENEMY,
             1
     );
     private static final int DAMAGE = 1;
-    private static final int baseMagicNumber = 3;
+    private static final int baseMagicNumber = 4;
 
     public ArrowStorm(){
         super(ID,info);
@@ -66,7 +66,7 @@ public class ArrowStorm extends BaseCard{
     public void upgrade(){
         if(!this.upgraded){
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(3);
         }
     }
     public AbstractCard makeCopy() { //Optional

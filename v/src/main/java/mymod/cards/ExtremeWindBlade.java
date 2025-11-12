@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mymod.ModTag;
 import mymod.actions.ExtremeWindBladeAction;
 import mymod.character.V;
 import mymod.util.CardStats;
@@ -16,71 +17,85 @@ public class ExtremeWindBlade extends BaseCard{
     private static final CardStats info = new CardStats(
             V.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.ALL_ENEMY,
-            2
+            1
     );
 
     public ExtremeWindBlade(){
         super(ID,info);
-        this.baseDamage=3;
-        this.baseMagicNumber = 2;
+        this.baseDamage=4;
+        this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
 
         this.damageType = DamageInfo.DamageType.THORNS;
         this.isMultiDamage = true;
 
+        tags.add(ModTag.Card_MonteCristo);
 
 
-
-        //次数
-        setBlock(1,1);
 
     }
 
     public static int triggerCount = 0;
-    private static int tCheck = 0;
+    private static int tCheck = 1;
 
     public static void onCardUsedWithTag(){
-        triggerCount++;
+        if(isExtremeWindBladeInHand()){
+            triggerCount++;
+            System.out.println("triggerCount: "+triggerCount);
+            if(triggerCount >tCheck) {
+                triggerCount = 0;
+                autoUseCard();
+            }
+        }
+    }
+
+    private static boolean isExtremeWindBladeInHand(){
+        AbstractPlayer player = AbstractDungeon.player;
+        if(player== null|| player.hand==null)
+            return false;
+        for(AbstractCard card : player.hand.group){
+            if(card instanceof ExtremeWindBlade){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void autoUseCard(){
+        AbstractPlayer player = AbstractDungeon.player;
+        if(player== null|| player.hand==null)
+            return;
+        for(AbstractCard card : player.hand.group){
+            if(card instanceof ExtremeWindBlade){
+                ExtremeWindBlade blade = (ExtremeWindBlade) card;
+                AbstractMonster target = AbstractDungeon.getRandomMonster();
+                if(target != null){
+                    AbstractDungeon.actionManager.addToBottom(
+                            new ExtremeWindBladeAction(
+                                    player,
+                                    blade.multiDamage,
+                                    blade.damageTypeForTurn,
+                                    blade.upgraded
+                            )
+                    );
+                }
+            }
+        }
     }
     public static void resetTriggerCount(){
         triggerCount = 0;
-        tCheck=0;
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ExtremeWindBladeAction(p,this.multiDamage,this.damageTypeForTurn,this.upgraded,this.damage));
-        triggerCount = 0;
-        tCheck = 0;
+        addToBot(new ExtremeWindBladeAction(p,this.multiDamage,this.damageTypeForTurn,this.upgraded));
     }
 
 
-    public void triggerOnGlowCheck() {
-        if (tCheck!=triggerCount){
-            upgradeDamage(this.magicNumber);
-            updateCost(-1);
-            tCheck = triggerCount;
-        }
-        if (triggerCount>=2){
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        }else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
-
-    }
-
-    public AbstractCard makeCopy() { //Optional
-        AbstractCard tmp =new ExtremeWindBlade();
-        try{
-            if(AbstractDungeon.player!=null){
-                tmp.updateCost(AbstractDungeon.player.damagedThisCombat);
-            }
-        }catch(Exception e){
-            System.out.println("ExtremeWindBlade.makeCopy()");
-        }
-
-        return tmp;
+    public AbstractCard makeCopy() {
+        return new ExtremeWindBlade();
     }
 
 }
