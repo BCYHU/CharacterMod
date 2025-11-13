@@ -150,6 +150,7 @@ public class V extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
         retVal.add(modID+":BeamSlice");
+        retVal.add("Busted Crown");
 
         return retVal;
     }
