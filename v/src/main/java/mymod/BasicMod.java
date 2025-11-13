@@ -6,7 +6,7 @@ import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
+
 import mymod.cards.BaseCard;
 import mymod.cards.ExtremeWindBlade;
 import mymod.character.V;

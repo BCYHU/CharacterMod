@@ -10,8 +10,6 @@ import mymod.actions.ExtremeWindBladeAction;
 import mymod.character.V;
 import mymod.util.CardStats;
 
-
-
 public class ExtremeWindBlade extends BaseCard{
     public static final String ID = makeID(ExtremeWindBlade.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -99,3 +97,4 @@ public class ExtremeWindBlade extends BaseCard{
     }
 
 }
+
