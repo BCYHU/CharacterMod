@@ -39,7 +39,7 @@ public class AutoIterative extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        SelectCardsInHandAction action = new SelectCardsInHandAction(1, "选择一张牌移除",
+        SelectCardsInHandAction action = new SelectCardsInHandAction(1, "移除",
                 card -> true,
                 cards -> {
                     for (AbstractCard c : cards){
