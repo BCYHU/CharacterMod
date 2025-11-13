@@ -2,6 +2,7 @@ package mymod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -31,6 +32,7 @@ public class ExtremeWindBladeAction extends AbstractGameAction {
         if(this.upgraded){
             addToBot(new DamageAllEnemiesAction(this.p,multiDamage,this.damageType, AttackEffect.NONE,true));
         }
+        addToBot(new DiscardAction(this.p,this.p,1,false));
         this.isDone = true;
     }
 }

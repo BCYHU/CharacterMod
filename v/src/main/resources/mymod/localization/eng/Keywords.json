@@ -50,9 +50,9 @@
     "DESCRIPTION": "Monte Cristo,蒙泰计划的最终兵器。"
   },
   {
-    "PROPER_NAME": "追块",
+    "PROPER_NAME": "追块X",
     "NAMES": [
-      "追块X"
+      "追块"
     ],
     "DESCRIPTION": "打出X张V的牌后触发的效果。"
   }

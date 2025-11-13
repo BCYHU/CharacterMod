@@ -24,7 +24,7 @@
   },
   "${modID}:AutoIterative": {
     "NAME": "自动迭代",
-    "DESCRIPTION": "移除手牌中1张牌。 NL 升级抽牌堆中随机1张牌。 NL 结束你的回合。 NL 跳过你的下回合。 NL 消耗 "
+    "DESCRIPTION": "移除手牌中1张牌 NL 获得 !M! 层 易伤 NL 结束你的回合。 NL 虚无 NL 消耗"
   },
   "${modID}:ArrowStorm":{
     "NAME": "箭雨风暴",
@@ -37,5 +37,46 @@
   "${modID}:ExtremeWindBlade":{
     "NAME": "极-斩月",
     "DESCRIPTION": " ${modID}:蒙泰终极型 NL 对全部敌人造成 !D! 点伤害 !M! 次。 NL ${modID}:追块 2：自动进行一次攻击。"
+  },
+
+  "${modID}:ConsecutiveDepthBomb":{
+    "NAME": "深海冲击",
+    "DESCRIPTION": " ${modID}:蒙泰终极型 NL 对全部敌人造成 !D! 点伤害 !M! 次。 NL ${modID}:追块 2：自动进行一次攻击。"
+  },
+  "${modID}:ShoutOfCourage":{
+    "NAME": "胜利怒吼",
+    "DESCRIPTION": "获得 !M! 点 临时生命 和 !B! 点格挡。"
+  },
+  "${modID}:LowerTheAnchor": {
+    "NAME": "疏通航道",
+    "DESCRIPTION": ""
+  },
+  "${modID}:RevolutionHammer": {
+    "NAME": "烈焰缠绕",
+    "DESCRIPTION": ""
+  },
+  "${modID}:StrengthOfOppression": {
+    "NAME": "雷霆一击",
+    "DESCRIPTION": ""
+  },
+  "${modID}:LightOfGrace": {
+    "NAME": "神圣洗礼",
+    "DESCRIPTION": ""
+  },
+  "${modID}:ThornsOfVengeance": {
+    "NAME": "恶魔审判",
+    "DESCRIPTION": ""
+  },
+  "${modID}:ShieldOfInvincibility": {
+    "NAME": "坚不可摧",
+    "DESCRIPTION": ""
+  },
+  "${modID}:SpiritOfProtection": {
+    "NAME": "守护之魂",
+    "DESCRIPTION": ""
+  },
+  "${modID}:HolyHammer": {
+    "NAME": "神圣法槌",
+    "DESCRIPTION": ""
   }
 }
