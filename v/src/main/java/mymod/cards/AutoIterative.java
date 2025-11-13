@@ -1,6 +1,6 @@
 package mymod.cards;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -38,7 +38,8 @@ public class AutoIterative extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SelectCardsAction(p.hand.group,"选择一张牌移除",
+
+        SelectCardsInHandAction action = new SelectCardsInHandAction(1, "选择一张牌移除",
                 card -> true,
                 cards -> {
                     for (AbstractCard c : cards){
@@ -51,8 +52,10 @@ public class AutoIterative extends BaseCard{
                             }
                         }
                     }
-                    p.hand.refreshHandLayout();
-                }));
+                }
+         );
+
+        addToBot(action);
         addToBot(new ApplyPowerAction(p,p,new VulnerablePower(p,magicNumber,false)));
         addToBot(new ApplyPowerAction(p,p,new WeakPower(p,magicNumber,false)));
         addToBot(new PressEndTurnButtonAction());

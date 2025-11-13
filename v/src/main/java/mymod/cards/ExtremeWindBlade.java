@@ -1,6 +1,8 @@
 package mymod.cards;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MultiGroupMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,6 +11,8 @@ import mymod.ModTag;
 import mymod.actions.ExtremeWindBladeAction;
 import mymod.character.V;
 import mymod.util.CardStats;
+
+import java.util.ArrayList;
 
 public class ExtremeWindBlade extends BaseCard{
     public static final String ID = makeID(ExtremeWindBlade.class.getSimpleName());
@@ -23,16 +27,12 @@ public class ExtremeWindBlade extends BaseCard{
     public ExtremeWindBlade(){
         super(ID,info);
         this.baseDamage=4;
-        this.baseMagicNumber = 1;
-        this.magicNumber = this.baseMagicNumber;
+        setMagic(1,1);
 
         this.damageType = DamageInfo.DamageType.THORNS;
         this.isMultiDamage = true;
 
         tags.add(ModTag.Card_MonteCristo);
-
-
-
     }
 
     public static int triggerCount = 0;
@@ -45,9 +45,11 @@ public class ExtremeWindBlade extends BaseCard{
             if(triggerCount >tCheck) {
                 triggerCount = 0;
                 autoUseCard();
+
             }
         }
     }
+
 
     private static boolean isExtremeWindBladeInHand(){
         AbstractPlayer player = AbstractDungeon.player;
@@ -65,8 +67,14 @@ public class ExtremeWindBlade extends BaseCard{
         AbstractPlayer player = AbstractDungeon.player;
         if(player== null|| player.hand==null)
             return;
+
+        ArrayList<AbstractCard> cardsToDiscard = new ArrayList<>();
+
         for(AbstractCard card : player.hand.group){
             if(card instanceof ExtremeWindBlade){
+
+                cardsToDiscard.add(card);
+
                 ExtremeWindBlade blade = (ExtremeWindBlade) card;
                 AbstractMonster target = AbstractDungeon.getRandomMonster();
                 if(target != null){
@@ -80,12 +88,18 @@ public class ExtremeWindBlade extends BaseCard{
                     );
                 }
             }
+
+        }
+        for(AbstractCard c:cardsToDiscard){
+            player.hand.moveToDiscardPile(c);
         }
     }
+
     public static void resetTriggerCount(){
         triggerCount = 0;
 
     }
+
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ExtremeWindBladeAction(p,this.multiDamage,this.damageTypeForTurn,this.upgraded));

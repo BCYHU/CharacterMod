@@ -36,7 +36,7 @@
   },
   "${modID}:ExtremeWindBlade":{
     "NAME": "极-斩月",
-    "DESCRIPTION": " ${modID}:蒙泰终极型 NL 对全部敌人造成 !D! 点伤害 !M! 次。 NL ${modID}:追块 2：自动进行一次攻击。"
+    "DESCRIPTION": " ${modID}:蒙泰终极型 NL 对全部敌人造成 !D! 点伤害 !M! 次。 NL ${modID}:追块 2：自动打出。"
   },
 
   "${modID}:ConsecutiveDepthBomb":{
