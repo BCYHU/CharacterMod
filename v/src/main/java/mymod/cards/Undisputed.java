@@ -24,22 +24,13 @@ public class Undisputed extends BaseCard{
 
     public Undisputed(){
         super(ID,info);
-        this.baseMagicNumber=2;
-        this.magicNumber=this.baseMagicNumber;
+        setMagic(2,2);
         tags.add(ModTag.Card_v);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m){
         addToBot(new ApplyPowerAction(p,p,new FuryMode(p,this.magicNumber),this.magicNumber));
-    }
-    @Override
-    public void upgrade(){
-        if(!this.upgraded){
-            upgradeName();
-            upgradeMagicNumber(1);
-
-        }
     }
 
     @Override

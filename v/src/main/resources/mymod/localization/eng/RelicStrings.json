@@ -10,7 +10,7 @@
     "NAME": "光束粉碎机",
     "FLAVOR": "Berserk-V的专属精粹武器",
     "DESCRIPTIONS": [
-      "每连续使用 #b3 张 #yBerserk-V 的卡牌，获得钢笔尖神力。"
+      "每连续使用 #b3 张 #yBerserk-V 的卡牌，获得 #b1 层 #y${modID}:暴走 并获得一张 #y斜线挥砍。"
     ]
   }
 }

@@ -38,6 +38,10 @@
     "NAME": "极-斩月",
     "DESCRIPTION": " ${modID}:蒙泰终极型 NL 对全部敌人造成 !D! 点伤害 !M! 次。 NL ${modID}:追块 2：自动打出。"
   },
+  "${modID}:SlashAttack":{
+    "NAME": "斜线挥砍",
+    "DESCRIPTION": " 造成 !D! 点伤害。 NL ${modID}:暴走 时回复2点生命。 NL 消耗 "
+  },
 
   "${modID}:ConsecutiveDepthBomb":{
     "NAME": "深海冲击",

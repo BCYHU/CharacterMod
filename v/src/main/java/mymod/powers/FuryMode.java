@@ -35,15 +35,15 @@ public class FuryMode extends BasePower{
         }
 
     }
+    public void atStartOfTurn() {
+        addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner,1), 1));
+    }
 
 
     public void onUseCard(AbstractCard c, UseCardAction action) {
         if(c.type==AbstractCard.CardType.ATTACK){
-            int f=this.amount;
-            for(int i=0;i<f;i++){
-                addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner,1), 1));
-                addToBot(new ApplyPowerAction(owner, owner, new LoseStrengthPower(owner, 1), 1));
-            }
+            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner,amount), amount));
+            addToBot(new ApplyPowerAction(owner, owner, new LoseStrengthPower(owner, amount), amount));
         }
         flash();
     }
@@ -53,13 +53,16 @@ public class FuryMode extends BasePower{
         }else{
            addToBot(new ReducePowerAction(this.owner, this.owner,POWER_ID,1));
         }
-        addToBot(new DamageAction(this.owner,new DamageInfo(this.owner,this.amount, DamageInfo.DamageType.HP_LOSS)));
+        addToBot(new DamageAction(this.owner,new DamageInfo(this.owner,this.amount, DamageInfo.DamageType.THORNS)));
     }
 
     @Override
     public void stackPower(int stackAmount) {
-        if(this.amount+stackAmount>MAX_STACK){
+        if(amount+stackAmount>MAX_STACK){
+            int a=amount+stackAmount-MAX_STACK;
+            addToBot(new ApplyPowerAction(owner,owner,new StrengthPower(this.owner, a),a));
             this.amount=MAX_STACK;
+
         }else{
             this.amount+=stackAmount;
         }
