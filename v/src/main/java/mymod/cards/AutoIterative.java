@@ -16,7 +16,6 @@ import mymod.util.CardStats;
 
 public class AutoIterative extends BaseCard{
     public static final String ID = makeID(AutoIterative.class.getSimpleName());
-
     public static final CardStats info = new CardStats(
             V.Meta.CARD_COLOR,
             CardType.SKILL,

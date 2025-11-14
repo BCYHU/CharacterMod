@@ -31,7 +31,7 @@
     "DESCRIPTION": " ${modID}:阿尔-零号机 NL 随机造成 !D! 点伤害并给予1层 虚弱 。 NL 重复 !M! 次。 消耗 "
   },
   "${modID}:Albatross":{
-    "NAME": "零式飞翼-炮击",
+    "NAME": "零式飞翼-花火",
     "DESCRIPTION": " ${modID}:阿尔-零号机 NL 对最后方敌人造成 !D! 点伤害， NL 并使其失去 !M! 点力量。"
   },
   "${modID}:ExtremeWindBlade":{
