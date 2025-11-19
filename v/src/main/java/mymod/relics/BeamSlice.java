@@ -7,12 +7,11 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import mymod.BasicMod;
 import mymod.ModTag;
 import mymod.cards.SlashAttack;
+import mymod.powers.FuryMode;
 import mymod.util.TextureLoader;
 
 import static mymod.BasicMod.makeID;
@@ -65,6 +64,7 @@ public class BeamSlice extends CustomRelic {
             }else if(this.counter==3){
                 this.pulse=false;
                 addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
+                addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new FuryMode(AbstractDungeon.player,1)));
                 addToBot(new MakeTempCardInHandAction(SA.makeCopy(),1,false));
                 AbstractDungeon.player.hand.refreshHandLayout();
                 this.counter=0;

@@ -9,4 +9,5 @@ public class ModTag {
     public static AbstractCard.CardTags Card_v;
     public static AbstractCard.CardTags Card_R_0;
     public static AbstractCard.CardTags Card_MonteCristo;
+    public static AbstractCard.CardTags Card_SP;
 }

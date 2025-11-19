@@ -40,14 +40,21 @@
     "NAMES": [
       "阿尔-零号机"
     ],
-    "DESCRIPTION": "R-0，擅长远程支援。"
+    "DESCRIPTION": "R-0，提供短期支援。"
   },
   {
     "PROPER_NAME": "蒙泰终极型",
     "NAMES": [
       "蒙泰终极型"
     ],
-    "DESCRIPTION": "Monte Cristo,蒙泰计划的最终兵器。"
+    "DESCRIPTION": "Monte Cristo,提供压制能力。"
+  },
+  {
+    "PROPER_NAME": "SP技能",
+    "NAMES": [
+      "SP"
+    ],
+    "DESCRIPTION": "特殊卡牌"
   },
   {
     "PROPER_NAME": "追块X",

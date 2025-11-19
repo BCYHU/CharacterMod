@@ -17,10 +17,11 @@
       "最大可叠加5层，超出上限的暴走会转化为力量。"
     ]
   },
-  "${modID}:AutoIterativePower": {
-    "NAME": "自动迭代",
+  "${modID}:RevolutionHammerPower": {
+    "NAME": "焰缚灾锤",
     "DESCRIPTIONS": [
-      "跳过你的下一回合。"
+      "失去生命时，抽 #b",
+      " 张牌。"
     ]
   }
 }

@@ -31,7 +31,7 @@ public class ArrowStorm extends BaseCard{
         super(ID,info);
         setDamage(DAMAGE);
         setMagic(baseMagicNumber);
-        this.exhaust = true;
+        setExhaust(true);
 
         tags.add(ModTag.Card_R_0);
     }

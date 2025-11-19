@@ -27,8 +27,8 @@ public class SlashAttack extends BaseCard{
 
     public SlashAttack(){
         super(ID,info);
-        setDamage(7,3);
-        exhaust=true;
+        setDamage(4,3);
+        setExhaust(true);
 
         tags.add(ModTag.Card_v);
     }

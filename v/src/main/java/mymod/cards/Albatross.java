@@ -28,6 +28,7 @@ public class Albatross extends BaseCard{
         super(ID,info);
         setDamage(4,3);
         setMagic(1,1);
+        setExhaust(true);
 
         tags.add(ModTag.Card_R_0);
     }

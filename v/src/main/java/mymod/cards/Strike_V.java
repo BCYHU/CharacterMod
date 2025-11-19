@@ -17,7 +17,7 @@ public class Strike_V extends BaseCard{
             CardType.ATTACK,
             CardRarity.BASIC,
             CardTarget.ENEMY,
-            1
+            2
     );
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
