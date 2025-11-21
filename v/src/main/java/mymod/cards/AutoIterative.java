@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -13,6 +14,8 @@ import mymod.ModTag;
 
 import mymod.character.V;
 import mymod.util.CardStats;
+
+import java.util.ArrayList;
 
 public class AutoIterative extends BaseCard{
     public static final String ID = makeID(AutoIterative.class.getSimpleName());
@@ -37,13 +40,16 @@ public class AutoIterative extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         SelectCardsInHandAction action = new SelectCardsInHandAction(1, "移除",
                 card -> true,
                 cards -> {
-                    for (AbstractCard c : cards){
+                    ArrayList<AbstractCard> cardsToRemove = new ArrayList<>(cards);
+                    for (AbstractCard c : cardsToRemove){
                         c.onRemoveFromMasterDeck();
+                        p.hand.removeCard(c);
                         p.hand.moveToExhaustPile(c);
+                        AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
+                        AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
                         for (AbstractCard masterCard: p.masterDeck.group){
                             if(masterCard.uuid.equals(c.uuid)){
                                 p.masterDeck.removeCard(masterCard);
@@ -60,6 +66,8 @@ public class AutoIterative extends BaseCard{
         addToBot(new PressEndTurnButtonAction());
 
     }
+
+
 
     @Override
     public AbstractCard makeCopy() { //Optional

@@ -26,7 +26,7 @@
   },
   "${modID}:AutoIterative": {
     "NAME": "自动迭代",
-    "DESCRIPTION": "移除手牌中1张牌 NL 获得 !M! 层 易伤 NL 结束你的回合。 NL ${modID}:v , 虚无 , 消耗"
+    "DESCRIPTION": "移除手牌中1张牌 NL 获得 !M! 层 易伤 和 虚弱 NL 结束你的回合。 NL ${modID}:v , 虚无 , 消耗"
   },
   "${modID}:ArrowStorm":{
     "NAME": "箭雨风暴",
