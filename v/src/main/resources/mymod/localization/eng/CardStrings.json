@@ -34,7 +34,7 @@
   },
   "${modID}:Albatross":{
     "NAME": "零式飞翼-花火",
-    "DESCRIPTION": " 对最后方敌人造成 !D! 点伤害， NL 并使其失去 !M! 点 力量 。"
+    "DESCRIPTION": " 对最后方敌人造成 !D! 点伤害， NL 并使其失去 !M! 点 力量 。 NL 消耗 "
   },
   "${modID}:ExtremeWindBlade":{
     "NAME": "极-斩月",

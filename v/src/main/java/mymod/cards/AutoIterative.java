@@ -43,7 +43,7 @@ public class AutoIterative extends BaseCard{
                 cards -> {
                     for (AbstractCard c : cards){
                         c.onRemoveFromMasterDeck();
-                        p.hand.removeCard(c);
+                        p.hand.moveToExhaustPile(c);
                         for (AbstractCard masterCard: p.masterDeck.group){
                             if(masterCard.uuid.equals(c.uuid)){
                                 p.masterDeck.removeCard(masterCard);
