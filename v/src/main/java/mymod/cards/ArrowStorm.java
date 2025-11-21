@@ -33,7 +33,6 @@ public class ArrowStorm extends BaseCard{
         setMagic(baseMagicNumber);
         setExhaust(true);
 
-        tags.add(ModTag.Card_R_0);
     }
 
 

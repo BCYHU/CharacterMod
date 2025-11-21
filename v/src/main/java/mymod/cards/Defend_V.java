@@ -25,7 +25,7 @@ public class Defend_V extends BaseCard{
         setBlock(BLOCK,UPG_BLOCK);
 
         tags.add(CardTags.STARTER_DEFEND);
-        tags.add(ModTag.Card_v);
+
 
     }
 

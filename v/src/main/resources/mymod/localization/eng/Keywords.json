@@ -33,35 +33,34 @@
     "NAMES": [
       "暴走"
     ],
-    "DESCRIPTION": "每当你打出一张攻击牌时，获得临时力量。在下回合时流失生命。"
+    "DESCRIPTION": "每当你打出 #b1 张 #y攻击 牌时，获得 临时力量 。在下回合时流失生命。"
   },
   {
-    "PROPER_NAME": "阿尔-零号机",
-    "NAMES": [
-      "阿尔-零号机"
+    "PROPER_NAME":  "领悟",
+    "NAMES":[
+      "领悟"
     ],
-    "DESCRIPTION": "R-0，提供短期支援。"
-  },
-  {
-    "PROPER_NAME": "蒙泰终极型",
-    "NAMES": [
-      "蒙泰终极型"
-    ],
-    "DESCRIPTION": "Monte Cristo,提供压制能力。"
+    "DESCRIPTION": "每打出 #b10 张 #yv 的卡牌时抽 #b1 张 #ySP 卡。"
   },
   {
     "PROPER_NAME": "SP技能",
     "NAMES": [
-      "SP"
+      "sp"
     ],
-    "DESCRIPTION": "特殊卡牌"
+    "DESCRIPTION": "会 #y保留 的特殊卡牌"
   },
   {
     "PROPER_NAME": "追块X",
     "NAMES": [
       "追块"
     ],
-    "DESCRIPTION": "打出X张V的牌后触发的效果。"
+    "DESCRIPTION": "打出 #bX 张 #yv 的卡牌后触发的效果。"
+  },
+  {
+    "PROPER_NAME": "Berserk-V",
+    "NAMES": [
+      "v"
+    ],
+    "DESCRIPTION": "#yv 的卡牌，能触发相关的效果。"
   }
-
 ]

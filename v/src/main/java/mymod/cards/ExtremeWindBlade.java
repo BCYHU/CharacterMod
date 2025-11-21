@@ -32,7 +32,6 @@ public class ExtremeWindBlade extends BaseCard{
         this.damageType = DamageInfo.DamageType.THORNS;
         this.isMultiDamage = true;
 
-        tags.add(ModTag.Card_MonteCristo);
     }
 
     public static int triggerCount = 0;

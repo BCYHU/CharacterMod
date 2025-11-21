@@ -17,6 +17,12 @@
       "最大可叠加5层，超出上限的暴走会转化为力量。"
     ]
   },
+  "${modID}:ComprehendPower": {
+    "NAME": "领悟",
+    "DESCRIPTIONS": [
+      "每打出 #b10 张 #yv 的卡牌时抽 #b1 张 #ySP 卡。"
+    ]
+  },
   "${modID}:RevolutionHammerPower": {
     "NAME": "焰缚灾锤",
     "DESCRIPTIONS": [

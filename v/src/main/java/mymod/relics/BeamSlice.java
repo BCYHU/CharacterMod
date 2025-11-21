@@ -11,10 +11,11 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import mymod.BasicMod;
 import mymod.ModTag;
 import mymod.cards.SlashAttack;
+import mymod.powers.ComprehendPower;
 import mymod.powers.FuryMode;
 import mymod.util.TextureLoader;
-
 import static mymod.BasicMod.makeID;
+
 
 public class BeamSlice extends CustomRelic {
     public static final String ID = makeID(BeamSlice.class.getSimpleName());
@@ -33,11 +34,11 @@ public class BeamSlice extends CustomRelic {
         SA=new SlashAttack(){
             @Override
             public AbstractCard makeCopy() {
-                SlashAttack SAcopy = (SlashAttack) super.makeCopy();
-                SAcopy.cost = 0;
-                SAcopy.costForTurn = 0;
-                SAcopy.freeToPlayOnce = true;
-                return SAcopy;
+                SlashAttack SAc = (SlashAttack) super.makeCopy();
+                SAc.cost = 0;
+                SAc.costForTurn = 0;
+                SAc.freeToPlayOnce = true;
+                return SAc;
             }
         };
         SA.cost = 0;
@@ -53,14 +54,16 @@ public class BeamSlice extends CustomRelic {
 
 
     @Override
+    public void atBattleStart() {
+        this.counter=0;
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ComprehendPower(AbstractDungeon.player,0)));
+    }
     public void onUseCard(AbstractCard c, UseCardAction a) {
         if(isV(c)){
             this.counter++;
-
             if(this.counter==2){
                 this.pulse=true;
                 beginPulse();
-
             }else if(this.counter==3){
                 this.pulse=false;
                 addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
@@ -72,6 +75,7 @@ public class BeamSlice extends CustomRelic {
             }
         }else{
             this.counter=0;
+            this.pulse=false;
         }
 
     }
