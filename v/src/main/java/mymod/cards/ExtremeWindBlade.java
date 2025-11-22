@@ -23,7 +23,7 @@ public class ExtremeWindBlade extends BaseCard{
 
     public ExtremeWindBlade(){
         super(ID,info);
-        this.baseDamage=3;
+        setDamage(3);
         setMagic(2,2);
 
         this.damageType = DamageInfo.DamageType.THORNS;
@@ -41,9 +41,9 @@ public class ExtremeWindBlade extends BaseCard{
                 triggerCount = 0;
                 autoUseCard();
             }
-        }
-    }
 
+                }
+    }
     public void triggerOnGlowCheck() {
         if (triggerCount == tCheck) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
@@ -59,7 +59,8 @@ public class ExtremeWindBlade extends BaseCard{
             return false;
         for(AbstractCard card : player.hand.group){
             if(card instanceof ExtremeWindBlade){
-                card.triggerOnGlowCheck();
+                    card.triggerOnGlowCheck();
+
                 return true;
             }
         }
@@ -79,6 +80,7 @@ public class ExtremeWindBlade extends BaseCard{
                 cardsToDiscard.add(card);
 
                 ExtremeWindBlade blade = (ExtremeWindBlade) card;
+                blade.calculateCardDamage(null);
                 AbstractMonster target = AbstractDungeon.getRandomMonster();
                 if(target != null){
                     AbstractDungeon.actionManager.addToBottom(
@@ -105,6 +107,7 @@ public class ExtremeWindBlade extends BaseCard{
 
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        calculateCardDamage(null);
         addToBot(new ExtremeWindBladeAction(p,this.multiDamage,this.damageTypeForTurn,this.upgraded));
     }
 

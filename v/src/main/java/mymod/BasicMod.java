@@ -4,9 +4,12 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 
 import basemod.interfaces.*;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import mymod.cards.BaseCard;
 import mymod.cards.ExtremeWindBlade;
 import mymod.character.V;
@@ -46,6 +49,9 @@ public class BasicMod implements
         EditKeywordsSubscriber,
         AddAudioSubscriber,
         //mod
+
+        OnStartBattleSubscriber,
+        PostBattleSubscriber,
         OnCardUseSubscriber,
         OnPlayerTurnStartSubscriber,
         PostInitializeSubscriber {
@@ -312,6 +318,11 @@ public class BasicMod implements
         if(Card.hasTag(ModTag.Card_v)){
             ExtremeWindBlade.onCardUsedWithTag();
         }
+        //
+        if(Card.hasTag(ModTag.Card_SP)){
+            Card.misc =9999;
+            }
+
     }
 
 
@@ -320,6 +331,18 @@ public class BasicMod implements
         ExtremeWindBlade.resetTriggerCount();
     }
 
+//
+
     public static ArrayList<AbstractCard> spDrawPile = new ArrayList<>();
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        BeamSlice.onBattleStart(abstractRoom);
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        BeamSlice.onPostBattle(abstractRoom);
+
+    }
 }
 

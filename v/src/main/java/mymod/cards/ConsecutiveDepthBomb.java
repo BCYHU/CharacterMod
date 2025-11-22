@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import mymod.ModTag;
 import mymod.util.CardStats;
 import mymod.character.V;
 
@@ -26,7 +27,11 @@ public class ConsecutiveDepthBomb extends BaseCard {
         super(ID,info);
         setDamage(4);
         setMagic(1,1);
+
+
+        tags.add(ModTag.Card_SP);
         setSelfRetain(true);
+        setExhaust(true);
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));

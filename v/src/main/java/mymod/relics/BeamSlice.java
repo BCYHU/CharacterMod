@@ -8,12 +8,19 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import mymod.BasicMod;
 import mymod.ModTag;
 import mymod.cards.SlashAttack;
 import mymod.powers.ComprehendPower;
 import mymod.powers.FuryMode;
 import mymod.util.TextureLoader;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Random;
+
 import static mymod.BasicMod.makeID;
 
 
@@ -86,6 +93,31 @@ public class BeamSlice extends CustomRelic {
 
     public AbstractRelic makeCopy() {
         return new BeamSlice();
+    }
+
+
+    //
+    public static void onBattleStart(AbstractRoom room) {
+        if(room instanceof MonsterRoom){
+            BasicMod.spDrawPile.clear();
+            Iterator<AbstractCard> iterator = AbstractDungeon.player.drawPile.group.iterator();
+            while (iterator.hasNext()) {
+                AbstractCard c = iterator.next();
+                if(c.hasTag(ModTag.Card_SP)){
+                    BasicMod.spDrawPile.add(c);
+                    iterator.remove();
+                }
+            }
+            Collections.shuffle(BasicMod.spDrawPile,new Random(AbstractDungeon.cardRandomRng.randomLong()));
+            BasicMod.logger.info("SP Cards moved to separate pile: " + BasicMod.spDrawPile.size());
+        }
+    }
+
+    public static void onPostBattle(AbstractRoom room) {
+        if (room instanceof MonsterRoom) {
+
+            BasicMod.spDrawPile.clear();
+        }
     }
 
 }

@@ -7,16 +7,19 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import mymod.ModTag;
+import mymod.BasicMod;
 
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
-import static mymod.BasicMod.makeID;
+import static mymod.BasicMod.*;
 import static mymod.relics.BeamSlice.isV;
 
 public class ComprehendPower extends BasePower {
     public static final String POWER_ID = makeID(ComprehendPower.class.getSimpleName());
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+
+    private int currentSPIndex=0;
 
     public ComprehendPower(AbstractCreature owner,int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
@@ -35,15 +38,17 @@ public class ComprehendPower extends BasePower {
                addToBot(new AbstractGameAction() {
                    @Override
                    public void update() {
-                       ArrayList<AbstractCard> Cl =new ArrayList<>();
-                       for (AbstractCard c:AbstractDungeon.player.drawPile.group){
-                           if (c.hasTag(ModTag.Card_SP)){
-                               Cl.add(c);
+                       BasicMod.logger.info("Attempting to draw SP card, available: " + BasicMod.spDrawPile.size());
+                       if (!BasicMod.spDrawPile.isEmpty()){
+                           AbstractCard cardToHand = spDrawPile.get(currentSPIndex).makeStatEquivalentCopy();
+                           AbstractDungeon.player.hand.addToHand(cardToHand);
+                           cardToHand.triggerWhenDrawn();
+                           BasicMod.logger.info("Added SP card to hand: " + cardToHand.name);
+                           currentSPIndex++;
+                           if(currentSPIndex>=spDrawPile.size()){
+                               currentSPIndex=0;
+                               Collections.shuffle(spDrawPile,new Random(AbstractDungeon.cardRandomRng.randomLong()));
                            }
-                       }
-                       if (!Cl.isEmpty()){
-                           AbstractCard cardToHand=Cl.get(0);
-                           AbstractDungeon.player.drawPile.moveToHand(cardToHand);
                        }
                        this.isDone=true;
                    }
@@ -54,4 +59,8 @@ public class ComprehendPower extends BasePower {
            }
        }
     }
+
+
+    //
+
 }

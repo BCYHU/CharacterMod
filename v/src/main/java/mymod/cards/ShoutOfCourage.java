@@ -24,6 +24,8 @@ public class ShoutOfCourage extends BaseCard{
         setMagic(5,3);
 
         tags.add(ModTag.Card_SP);
+        setSelfRetain(true);
+        setExhaust(true);
     }
 
     @Override

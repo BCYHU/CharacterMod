@@ -47,7 +47,7 @@
     "NAMES": [
       "sp"
     ],
-    "DESCRIPTION": "会 #y保留 的特殊卡牌"
+    "DESCRIPTION": "通过 #y领悟 抽取的卡牌。 NL 普遍具有 #y保留， #y消耗 "
   },
   {
     "PROPER_NAME": "追块X",

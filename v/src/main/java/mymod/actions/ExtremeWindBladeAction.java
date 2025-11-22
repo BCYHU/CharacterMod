@@ -28,11 +28,11 @@ public class ExtremeWindBladeAction extends AbstractGameAction {
 
 
     public void update() {
-        addToBot(new DamageAllEnemiesAction(this.p,multiDamage,this.damageType, AttackEffect.NONE,true));
-        addToBot(new DamageAllEnemiesAction(this.p,multiDamage,this.damageType, AttackEffect.NONE,true));
+        addToBot(new DamageAllEnemiesAction(null,multiDamage,this.damageType, AttackEffect.NONE,true));
+        addToBot(new DamageAllEnemiesAction(null,multiDamage,this.damageType, AttackEffect.NONE,true));
         if(this.upgraded){
-            addToBot(new DamageAllEnemiesAction(this.p,multiDamage,this.damageType, AttackEffect.NONE,true));
-            addToBot(new DamageAllEnemiesAction(this.p,multiDamage,this.damageType, AttackEffect.NONE,true));
+            addToBot(new DamageAllEnemiesAction(null,multiDamage,this.damageType, AttackEffect.NONE,true));
+            addToBot(new DamageAllEnemiesAction(null,multiDamage,this.damageType, AttackEffect.NONE,true));
         }
         this.isDone = true;
     }

@@ -67,4 +67,6 @@ public class FuryMode extends BasePower{
             this.amount+=stackAmount;
         }
     }
+
+
 }

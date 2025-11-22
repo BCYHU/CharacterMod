@@ -8,8 +8,8 @@
       "You can put more text in here.",
       "If you need to use it for stuff.",
       "Blizzard is a good example for this.",
-      "base/common/uncommon/rare=3/20/36/16   : 3/2/3/3",
-      "attack/skill/power=32/29/14     : 5/4/2"
+      "base/common/uncommon/rare=3/20/36/16   : 3/4/3/3",
+      "attack/skill/power=32/29/14     : 7/4/2"
     ]
   },
   "${modID}:Strike_V": {
@@ -79,8 +79,7 @@
   },
   "${modID}:SpiritOfProtection": {
     "NAME": "守护之魂",
-    "DESCRIPTION": "获得1层 无实体 和 !M! 层 多层护甲 。 NL ${modID}:sp ",
-    "UPGRADE_DESCRIPTION": "固有 NL 获得1层 无实体 和 !M! 层 多层护甲 。 NL ${modID}:sp "
+    "DESCRIPTION": "获得1层 无实体 和 !M! 层 多层护甲 。 NL ${modID}:sp "
   },
   "${modID}:HolyHammer": {
     "NAME": "神圣法槌",

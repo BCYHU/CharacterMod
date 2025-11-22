@@ -22,10 +22,12 @@ public class SpiritOfProtection extends BaseCard{
     );
     public SpiritOfProtection(){
         super(ID,info);
-        setSelfRetain(true);
-        setMagic(4);
-        setInnate(false,true);
+
+        setMagic(3,2);
+
         tags.add(ModTag.Card_SP);
+        setSelfRetain(true);
+
     }
 
     @Override

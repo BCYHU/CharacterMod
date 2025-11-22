@@ -27,6 +27,8 @@ public class RevolutionHammer extends BaseCard{
         setMagic(3,2);
 
         tags.add(ModTag.Card_SP);
+        setSelfRetain(true);
+
     }
 
 
