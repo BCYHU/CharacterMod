@@ -25,7 +25,6 @@ public class SpiritOfProtection extends BaseCard{
         setSelfRetain(true);
         setMagic(4);
         setInnate(false,true);
-
         tags.add(ModTag.Card_SP);
     }
 

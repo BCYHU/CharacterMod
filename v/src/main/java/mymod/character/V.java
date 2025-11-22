@@ -137,9 +137,12 @@ public class V extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        for(int x = 0; x < 3; x++){
+        for(int x = 0; x < 5; x++){
             retVal.add(modID+":Strike_V");
-            retVal.add(modID+":Defend_V");
+            if (x<4){
+                retVal.add(modID+":Defend_V");
+            }
+
         }
         retVal.add(modID+":Undisputed");
         return retVal;

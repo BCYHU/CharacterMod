@@ -319,5 +319,7 @@ public class BasicMod implements
     public void receiveOnPlayerTurnStart() {
         ExtremeWindBlade.resetTriggerCount();
     }
+
+    public static ArrayList<AbstractCard> spDrawPile = new ArrayList<>();
 }
 

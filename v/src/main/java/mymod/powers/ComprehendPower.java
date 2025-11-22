@@ -31,7 +31,7 @@ public class ComprehendPower extends BasePower {
     public void onUseCard(AbstractCard c, UseCardAction a) {
        if(isV(c)){
            this.amount++;
-           if(this.amount==10){
+           if(this.amount==5){
                addToBot(new AbstractGameAction() {
                    @Override
                    public void update() {

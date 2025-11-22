@@ -34,7 +34,7 @@
   },
   "${modID}:Albatross":{
     "NAME": "零式飞翼-花火",
-    "DESCRIPTION": " 对最后方敌人造成 !D! 点伤害， NL 并使其失去 !M! 点 力量 。 NL 消耗 "
+    "DESCRIPTION": " 对最后方敌人造成 !D! 点伤害， NL 并使敌人失去 !M! 点 力量 。 NL 消耗 "
   },
   "${modID}:ExtremeWindBlade":{
     "NAME": "极-斩月",
@@ -47,15 +47,15 @@
 
   "${modID}:ConsecutiveDepthBomb":{
     "NAME": "深海冲击",
-    "DESCRIPTION": " "
+    "DESCRIPTION": "造成 !D! 点伤害2次 NL 给予 !M! 层 易伤 NL ${modID}:sp "
   },
   "${modID}:ShoutOfCourage":{
-    "NAME": "胜利怒吼",
+    "NAME": "勇猛怒吼",
     "DESCRIPTION": "获得 !M! 点 临时生命 和 !B! 点 格挡 。 NL ${modID}:sp "
   },
   "${modID}:LowerTheAnchor": {
     "NAME": "疏通航道",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 清除敌人的 飞行 。 NL ${modID}:sp "
   },
   "${modID}:RevolutionHammer": {
     "NAME": "焰缚灾锤",
@@ -79,7 +79,8 @@
   },
   "${modID}:SpiritOfProtection": {
     "NAME": "守护之魂",
-    "DESCRIPTION": "获得1层 无实体 和 !M! 层 多层护甲 。 NL ${modID}:sp "
+    "DESCRIPTION": "获得1层 无实体 和 !M! 层 多层护甲 。 NL ${modID}:sp ",
+    "UPGRADE_DESCRIPTION": "固有 NL 获得1层 无实体 和 !M! 层 多层护甲 。 NL ${modID}:sp "
   },
   "${modID}:HolyHammer": {
     "NAME": "神圣法槌",

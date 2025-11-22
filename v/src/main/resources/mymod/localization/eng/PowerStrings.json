@@ -20,7 +20,7 @@
   "${modID}:ComprehendPower": {
     "NAME": "领悟",
     "DESCRIPTIONS": [
-      "每打出 #b10 张 #yv 的卡牌时抽 #b1 张 #ySP 卡。"
+      "每打出 #b5 张 #yv 的卡牌时抽 #b1 张 #ySP 卡。"
     ]
   },
   "${modID}:RevolutionHammerPower": {

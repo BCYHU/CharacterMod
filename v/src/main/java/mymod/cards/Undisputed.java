@@ -24,7 +24,7 @@ public class Undisputed extends BaseCard{
 
     public Undisputed(){
         super(ID,info);
-        setMagic(2,2);
+        setMagic(2,1);
         tags.add(ModTag.Card_v);
     }
 

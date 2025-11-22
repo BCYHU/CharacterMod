@@ -42,10 +42,18 @@ public class ArrowStorm extends BaseCard{
         for (int i = 0; i < magicNumber; i++){
             int randomValue = AbstractDungeon.cardRandomRng.random(0,6);
             if (randomValue==0){
-                addToBot(new DamageAction(
-                        p,new DamageInfo(null,damage, DamageInfo.DamageType.THORNS),
-                        AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-                addToBot(new ApplyPowerAction(p,p,new WeakPower(p,1,false),1));
+                addToBot(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        AbstractMonster target = AbstractDungeon.getRandomMonster();
+                        if (target !=null) {
+                            addToTop(new DamageAction(target, new DamageInfo(null, damage, DamageInfo.DamageType.THORNS),
+                                    AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+                            addToTop(new ApplyPowerAction(target, p, new WeakPower(target, 1, false), 1));
+                        }
+                        this.isDone=true;
+                    }
+                });
             }else {
                 addToBot(new AbstractGameAction() {
                     @Override

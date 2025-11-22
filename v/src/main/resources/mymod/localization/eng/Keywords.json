@@ -40,7 +40,7 @@
     "NAMES":[
       "领悟"
     ],
-    "DESCRIPTION": "每打出 #b10 张 #yv 的卡牌时抽 #b1 张 #ySP 卡。"
+    "DESCRIPTION": "每打出 #b5 张 #yv 的卡牌时抽 #b1 张 #ySP 卡。"
   },
   {
     "PROPER_NAME": "SP技能",

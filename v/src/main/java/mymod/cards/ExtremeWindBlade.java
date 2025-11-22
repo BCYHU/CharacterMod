@@ -1,13 +1,10 @@
 package mymod.cards;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MultiGroupMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import mymod.ModTag;
 import mymod.actions.ExtremeWindBladeAction;
 import mymod.character.V;
 import mymod.util.CardStats;
@@ -26,8 +23,8 @@ public class ExtremeWindBlade extends BaseCard{
 
     public ExtremeWindBlade(){
         super(ID,info);
-        this.baseDamage=4;
-        setMagic(1,1);
+        this.baseDamage=3;
+        setMagic(2,2);
 
         this.damageType = DamageInfo.DamageType.THORNS;
         this.isMultiDamage = true;
@@ -40,12 +37,18 @@ public class ExtremeWindBlade extends BaseCard{
     public static void onCardUsedWithTag(){
         if(isExtremeWindBladeInHand()){
             triggerCount++;
-            System.out.println("triggerCount: "+triggerCount);
             if(triggerCount >tCheck) {
                 triggerCount = 0;
                 autoUseCard();
-
             }
+        }
+    }
+
+    public void triggerOnGlowCheck() {
+        if (triggerCount == tCheck) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }else{
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 
@@ -56,6 +59,7 @@ public class ExtremeWindBlade extends BaseCard{
             return false;
         for(AbstractCard card : player.hand.group){
             if(card instanceof ExtremeWindBlade){
+                card.triggerOnGlowCheck();
                 return true;
             }
         }
