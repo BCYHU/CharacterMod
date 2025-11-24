@@ -1,11 +1,13 @@
 package mymod.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import mymod.actions.ExtremeWindBladeAction;
+
 import mymod.character.V;
 import mymod.util.CardStats;
 
@@ -32,12 +34,12 @@ public class ExtremeWindBlade extends BaseCard{
     }
 
     public static int triggerCount = 0;
-    private static int tCheck = 1;
+    private static int TRIGGER_THRESHOLD = 1;
 
     public static void onCardUsedWithTag(){
         if(isExtremeWindBladeInHand()){
             triggerCount++;
-            if(triggerCount >tCheck) {
+            if(triggerCount >TRIGGER_THRESHOLD) {
                 triggerCount = 0;
                 autoUseCard();
             }
@@ -45,7 +47,7 @@ public class ExtremeWindBlade extends BaseCard{
                 }
     }
     public void triggerOnGlowCheck() {
-        if (triggerCount == tCheck) {
+        if (triggerCount == TRIGGER_THRESHOLD) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }else{
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
@@ -60,7 +62,6 @@ public class ExtremeWindBlade extends BaseCard{
         for(AbstractCard card : player.hand.group){
             if(card instanceof ExtremeWindBlade){
                     card.triggerOnGlowCheck();
-
                 return true;
             }
         }
@@ -74,30 +75,25 @@ public class ExtremeWindBlade extends BaseCard{
 
         ArrayList<AbstractCard> cardsToDiscard = new ArrayList<>();
 
-        for(AbstractCard card : player.hand.group){
-            if(card instanceof ExtremeWindBlade){
-
+        for(AbstractCard card : player.hand.group) {
+            if (card instanceof ExtremeWindBlade) {
                 cardsToDiscard.add(card);
-
-                ExtremeWindBlade blade = (ExtremeWindBlade) card;
-                blade.calculateCardDamage(null);
-                AbstractMonster target = AbstractDungeon.getRandomMonster();
-                if(target != null){
-                    AbstractDungeon.actionManager.addToBottom(
-                            new ExtremeWindBladeAction(
-                                    player,
-                                    blade.multiDamage,
-                                    blade.damageTypeForTurn,
-                                    blade.upgraded
-                            )
-                    );
-                }
             }
-
         }
-        for(AbstractCard c:cardsToDiscard){
-            player.hand.moveToDiscardPile(c);
+        for(AbstractCard card : cardsToDiscard){
+            AbstractMonster target = AbstractDungeon.getRandomMonster();
+            if(target != null){
+                AbstractDungeon.actionManager.addToBottom(
+                        new DamageAllEnemiesAction(player, card.multiDamage,
+                                ((ExtremeWindBlade)card).damageType, AbstractGameAction.AttackEffect.NONE, true)
+                );
+                AbstractDungeon.actionManager.addToBottom(
+                        new DamageAllEnemiesAction(player, card.multiDamage,
+                                ((ExtremeWindBlade)card).damageType, AbstractGameAction.AttackEffect.NONE, true)
+                );
+            }
         }
+        cardsToDiscard.forEach(c -> player.hand.moveToDiscardPile(c));
     }
 
     public static void resetTriggerCount(){
@@ -107,8 +103,12 @@ public class ExtremeWindBlade extends BaseCard{
 
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        calculateCardDamage(null);
-        addToBot(new ExtremeWindBladeAction(p,this.multiDamage,this.damageTypeForTurn,this.upgraded));
+        addToBot(new DamageAllEnemiesAction(p,multiDamage,this.damageType, AbstractGameAction.AttackEffect.NONE,true));
+        addToBot(new DamageAllEnemiesAction(p,multiDamage,this.damageType, AbstractGameAction.AttackEffect.NONE,true));
+        if(this.upgraded){
+            addToBot(new DamageAllEnemiesAction(p,multiDamage,this.damageType, AbstractGameAction.AttackEffect.NONE,true));
+            addToBot(new DamageAllEnemiesAction(p,multiDamage,this.damageType, AbstractGameAction.AttackEffect.NONE,true));
+        }
     }
 
 

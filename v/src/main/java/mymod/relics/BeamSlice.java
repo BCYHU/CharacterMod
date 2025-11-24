@@ -66,7 +66,7 @@ public class BeamSlice extends CustomRelic {
         addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ComprehendPower(AbstractDungeon.player,0)));
     }
     public void onUseCard(AbstractCard c, UseCardAction a) {
-        if(isV(c)){
+        if(isKnight(c)){
             this.counter++;
             if(this.counter==2){
                 this.pulse=true;
@@ -87,8 +87,8 @@ public class BeamSlice extends CustomRelic {
 
     }
 
-    public static boolean isV(AbstractCard c){
-        return c.hasTag(ModTag.Card_v);
+    public static boolean isKnight(AbstractCard c){
+        return c.hasTag(ModTag.Card_Knight);
     }
 
     public AbstractRelic makeCopy() {

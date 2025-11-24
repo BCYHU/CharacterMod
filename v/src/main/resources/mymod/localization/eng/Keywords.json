@@ -40,7 +40,7 @@
     "NAMES":[
       "领悟"
     ],
-    "DESCRIPTION": "每打出 #b5 张 #yv 的卡牌时抽 #b1 张 #ySP 卡。"
+    "DESCRIPTION": "每打出 #b5 张 #y骑士 牌时抽 #b1 张 #ySP 卡。"
   },
   {
     "PROPER_NAME": "SP技能",
@@ -54,13 +54,13 @@
     "NAMES": [
       "追块"
     ],
-    "DESCRIPTION": "打出 #bX 张 #yv 的卡牌后触发的效果。"
+    "DESCRIPTION": "打出 #bX 张 #y骑士 牌后触发的效果。"
   },
   {
-    "PROPER_NAME": "Berserk-V",
+    "PROPER_NAME": "骑士",
     "NAMES": [
-      "v"
+      "骑士"
     ],
-    "DESCRIPTION": "#yv 的卡牌，能触发相关的效果。"
+    "DESCRIPTION": "#y骑士 牌，能触发相关的效果。"
   }
 ]

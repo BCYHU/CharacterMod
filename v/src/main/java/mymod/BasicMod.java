@@ -4,9 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 
 import basemod.interfaces.*;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -315,7 +313,7 @@ public class BasicMod implements
 
     @Override
     public void receiveCardUsed(AbstractCard Card) {
-        if(Card.hasTag(ModTag.Card_v)){
+        if(Card.hasTag(ModTag.Card_Knight)){
             ExtremeWindBlade.onCardUsedWithTag();
         }
         //

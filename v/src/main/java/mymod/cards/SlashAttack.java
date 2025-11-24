@@ -30,7 +30,7 @@ public class SlashAttack extends BaseCard{
         setDamage(4,3);
         setExhaust(true);
 
-        tags.add(ModTag.Card_v);
+        tags.add(ModTag.Card_Knight);
     }
 
     @Override

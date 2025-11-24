@@ -6,6 +6,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 //mod-tag
 public class ModTag {
     @SpireEnum
-    public static AbstractCard.CardTags Card_v;
+    public static AbstractCard.CardTags Card_Knight;
     public static AbstractCard.CardTags Card_SP;
 }

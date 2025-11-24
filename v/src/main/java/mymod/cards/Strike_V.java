@@ -28,7 +28,7 @@ public class Strike_V extends BaseCard{
 
         tags.add(CardTags.STARTER_STRIKE);
         tags.add(CardTags.STRIKE);
-        tags.add(ModTag.Card_v);
+        tags.add(ModTag.Card_Knight);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m){

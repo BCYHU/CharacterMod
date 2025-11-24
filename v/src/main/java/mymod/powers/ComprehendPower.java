@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.Random;
 
 import static mymod.BasicMod.*;
-import static mymod.relics.BeamSlice.isV;
+import static mymod.relics.BeamSlice.isKnight;
 
 public class ComprehendPower extends BasePower {
     public static final String POWER_ID = makeID(ComprehendPower.class.getSimpleName());
@@ -32,7 +32,7 @@ public class ComprehendPower extends BasePower {
 
 
     public void onUseCard(AbstractCard c, UseCardAction a) {
-       if(isV(c)){
+       if(isKnight(c)){
            this.amount++;
            if(this.amount==5){
                addToBot(new AbstractGameAction() {

@@ -25,7 +25,7 @@ public class Undisputed extends BaseCard{
     public Undisputed(){
         super(ID,info);
         setMagic(2,1);
-        tags.add(ModTag.Card_v);
+        tags.add(ModTag.Card_Knight);
     }
 
     @Override

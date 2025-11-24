@@ -20,7 +20,7 @@
   "${modID}:ComprehendPower": {
     "NAME": "领悟",
     "DESCRIPTIONS": [
-      "每打出 #b5 张 #yv 的卡牌时抽 #b1 张 #ySP 卡。"
+      "每打出 #b5 张 #y骑士 牌时抽 #b1 张 #ySP 卡。"
     ]
   },
   "${modID}:RevolutionHammerPower": {
@@ -28,6 +28,13 @@
     "DESCRIPTIONS": [
       "失去生命时，抽 #b",
       " 张牌。"
+    ]
+  },
+  "${modID}:CaffeineDependencyPower": {
+    "NAME": "咖啡上瘾",
+    "DESCRIPTIONS": [
+      "每回合开始时失去 #b",
+      " 点 #y力量 。"
     ]
   }
 }

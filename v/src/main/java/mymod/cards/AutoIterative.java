@@ -34,7 +34,7 @@ public class AutoIterative extends BaseCard{
         setMagic(4,-2);
 
 
-        tags.add(ModTag.Card_v);
+        tags.add(ModTag.Card_Knight);
 
     }
 
