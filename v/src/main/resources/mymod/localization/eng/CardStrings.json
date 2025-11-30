@@ -45,7 +45,6 @@
     "NAME": "斜线挥砍",
     "DESCRIPTION": " 造成 !D! 点伤害。 NL ${modID}:暴走 时回复2点生命。 NL ${modID}:骑士 , 消耗 "
   },
-
   "${modID}:ConsecutiveDepthBomb":{
     "NAME": "深海冲击",
     "DESCRIPTION": "造成 !D! 点伤害2次 NL 给予 !M! 层 易伤 NL ${modID}:sp "
@@ -56,15 +55,15 @@
   },
   "${modID}:LowerTheAnchor": {
     "NAME": "疏通航道",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 清除敌人的 飞行 。 NL ${modID}:sp "
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 结束敌人的 飞行 。 NL ${modID}:sp "
   },
   "${modID}:RevolutionHammer": {
     "NAME": "焰缚灾锤",
     "DESCRIPTION": "获得 !M! 层 荆棘 ，每当你失去生命时抽一张牌。 NL ${modID}:sp "
   },
   "${modID}:StrengthOfOppression": {
-    "NAME": "雷霆一击",
-    "DESCRIPTION": ""
+    "NAME": "雷霆之击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 易伤 状态，结束 易伤 再造成一次。 NL ${modID}:sp "
   },
   "${modID}:LightOfGrace": {
     "NAME": "神圣洗礼",

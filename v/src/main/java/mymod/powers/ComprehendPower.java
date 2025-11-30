@@ -44,6 +44,14 @@ public class ComprehendPower extends BasePower {
                            AbstractDungeon.player.hand.addToHand(cardToHand);
                            cardToHand.triggerWhenDrawn();
                            BasicMod.logger.info("Added SP card to hand: " + cardToHand.name);
+
+                           //抽完牌后检查是否为sp能力牌，抽出来后再sp抽牌堆中移除
+                           if (cardToHand.type==AbstractCard.CardType.POWER){
+                               spDrawPile.remove(currentSPIndex);
+                               currentSPIndex--;
+                           }
+                           //
+
                            currentSPIndex++;
                            if(currentSPIndex>=spDrawPile.size()){
                                currentSPIndex=0;
