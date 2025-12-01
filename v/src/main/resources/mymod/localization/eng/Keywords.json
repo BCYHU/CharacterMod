@@ -62,5 +62,13 @@
       "骑士"
     ],
     "DESCRIPTION": "#y骑士 牌，能触发相关的效果。"
+  },
+  {
+    "PROPER_NAME": "疾行",
+    "NAMES": [
+      "疾行"
+    ],
+    "DESCRIPTION": "下次受到的伤害降低"
   }
+
 ]

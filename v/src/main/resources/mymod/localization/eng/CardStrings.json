@@ -8,9 +8,9 @@
       "You can put more text in here.",
       "If you need to use it for stuff.",
       "Blizzard is a good example for this.",
-      "base/common/uncommon/rare=3/20/36/16    : 3/4/3/4",
-      "attack/skill/power=32/29/14     : 7/4/3",
-      "v/sp/else    : 5/5/4"
+      "base/common/uncommon/rare=3/20/36/16    : 3/5/5/4",
+      "attack/skill/power=32/29/14     : 8/5/4",
+      "v/sp/else    : 5/8/4"
     ]
   },
   "${modID}:Strike_V": {
@@ -67,7 +67,8 @@
   },
   "${modID}:LightOfGrace": {
     "NAME": "神圣洗礼",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "回复 !M! 生命。 NL 获得1层 再生 。 NL ${modID}:sp",
+    "UPGRADE_DESCRIPTION": "回复 !M! 生命。 NL 获得2层 再生 。 NL ${modID}:sp"
   },
   "${modID}:ThornsOfVengeance": {
     "NAME": "恶魔审判",
@@ -75,7 +76,7 @@
   },
   "${modID}:ShieldOfInvincibility": {
     "NAME": "坚不可摧",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "获得 !M! 层 ${modID}:疾行 。 NL ${modID}:sp "
   },
   "${modID}:SpiritOfProtection": {
     "NAME": "守护之魂",

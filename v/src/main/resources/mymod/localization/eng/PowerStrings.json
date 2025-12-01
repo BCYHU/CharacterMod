@@ -36,5 +36,12 @@
       "每回合开始时失去 #b",
       " 点 #y力量 。"
     ]
+  },
+  "${modID}:SpeedAlongPower": {
+    "NAME": "疾行",
+    "DESCRIPTIONS": [
+      "将下 #b",
+      " 次受到的 #y攻击 伤害降低 #b50% 。"
+    ]
   }
 }
