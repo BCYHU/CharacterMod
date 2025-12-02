@@ -332,6 +332,7 @@ public class BasicMod implements
 //
 
     public static ArrayList<AbstractCard> spDrawPile = new ArrayList<>();
+    public static ArrayList<AbstractCard> spExhaustPile = new ArrayList<>();
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         BeamSlice.onBattleStart(abstractRoom);

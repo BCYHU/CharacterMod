@@ -43,7 +43,7 @@ public class Albatross extends BaseCard{
             }
         }
         if(target != null){
-            addToBot(new DamageAction(target,new DamageInfo(null,damage, DamageInfo.DamageType.THORNS)));
+            addToBot(new DamageAction(target,new DamageInfo(p,damage, DamageInfo.DamageType.NORMAL)));
             addToBot(new ApplyPowerAction(target,p,new StrengthPower(target,-magicNumber),-magicNumber));
         }
     }

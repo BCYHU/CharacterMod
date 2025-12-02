@@ -30,7 +30,7 @@ public class CaffeineDependency extends BaseCard{
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new CaffeineDependencyPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new CaffeineDependencyPower(p, 2)));
     }
     public AbstractCard makeCopy() {
         return new CaffeineDependency();

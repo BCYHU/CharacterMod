@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
-import static mymod.BasicMod.makeID;
+import static mymod.BasicMod.*;
 
 
 public class BeamSlice extends CustomRelic {
@@ -115,8 +115,13 @@ public class BeamSlice extends CustomRelic {
 
     public static void onPostBattle(AbstractRoom room) {
         if (room instanceof MonsterRoom) {
-
+            for ( AbstractCard c : BasicMod.spExhaustPile){
+                if(c !=null){
+                    spDrawPile.add(c);
+                }
+            }
             BasicMod.spDrawPile.clear();
+            BasicMod.spExhaustPile.clear();
         }
     }
 

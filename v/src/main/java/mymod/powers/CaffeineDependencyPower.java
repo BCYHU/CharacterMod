@@ -5,6 +5,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.MetallicizePower;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static mymod.BasicMod.makeID;
@@ -23,14 +25,19 @@ public class CaffeineDependencyPower extends BasePower {
     }
 
     public void updateDescription() {
-        this.description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
+        if((owner.hasPower(StrengthPower.POWER_ID)) && (owner.getPower(StrengthPower.POWER_ID).amount>0)){
+        this.description = powerStrings.DESCRIPTIONS[0] + this.amount + powerStrings.DESCRIPTIONS[1]+powerStrings.DESCRIPTIONS[2]+amount+powerStrings.DESCRIPTIONS[3];
+        }
+        else{
+            this.description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
+        }
     }
 
     public void atStartOfTurn() {
         flash();
         addToBot((new ApplyPowerAction(owner,owner,new StrengthPower(owner,-amount),-amount)));
         if((owner.hasPower(StrengthPower.POWER_ID)) && (owner.getPower(StrengthPower.POWER_ID).amount>0)){
-            addToBot((new GainBlockAction(owner,owner,owner.getPower(StrengthPower.POWER_ID).amount)));
+            addToBot((new ApplyPowerAction(owner,owner,new PlatedArmorPower(owner,amount))));
         }
     }
 }

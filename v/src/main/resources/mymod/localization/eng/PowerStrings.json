@@ -34,7 +34,9 @@
     "NAME": "咖啡上瘾",
     "DESCRIPTIONS": [
       "每回合开始时失去 #b",
-      " 点 #y力量 。"
+      " 点 #y力量 ，",
+      "并获得 #b",
+      " 点 #y多层护甲 。"
     ]
   },
   "${modID}:SpeedAlongPower": {
@@ -42,6 +44,13 @@
     "DESCRIPTIONS": [
       "将下 #b",
       " 次受到的 #y攻击 伤害降低 #b50% 。"
+    ]
+  },
+  "${modID}:ThornsOfVengeancePower": {
+    "NAME": "复仇荆棘",
+    "DESCRIPTIONS": [
+      "本回合内每受到 #b",
+      " 次伤害，下回合获得 #b1 层 双倍伤害 。"
     ]
   }
 }

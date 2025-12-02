@@ -28,7 +28,7 @@ public class ExtremeWindBlade extends BaseCard{
         setDamage(3);
         setMagic(2,2);
 
-        this.damageType = DamageInfo.DamageType.THORNS;
+        this.damageType = DamageInfo.DamageType.NORMAL;
         this.isMultiDamage = true;
 
     }

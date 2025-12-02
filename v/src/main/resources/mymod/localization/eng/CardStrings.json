@@ -8,9 +8,9 @@
       "You can put more text in here.",
       "If you need to use it for stuff.",
       "Blizzard is a good example for this.",
-      "base/common/uncommon/rare=3/20/36/16    : 3/5/5/4",
-      "attack/skill/power=32/29/14     : 8/5/4",
-      "v/sp/else    : 5/8/4"
+      "base/common/uncommon/rare=3/20/36/16    : 3/5/7/4",
+      "attack/skill/power=32/29/14     : 9/5/5",
+      "v/sp/else    : 5/10/4"
     ]
   },
   "${modID}:Strike_V": {
@@ -71,8 +71,8 @@
     "UPGRADE_DESCRIPTION": "回复 !M! 生命。 NL 获得2层 再生 。 NL ${modID}:sp"
   },
   "${modID}:ThornsOfVengeance": {
-    "NAME": "恶魔审判",
-    "DESCRIPTION": ""
+    "NAME": "复仇荆棘",
+    "DESCRIPTION": "获得3点 荆棘。 NL 每受到 !M! 次伤害，下回合造成伤害翻倍 。 NL ${modID}:sp"
   },
   "${modID}:ShieldOfInvincibility": {
     "NAME": "坚不可摧",
@@ -84,11 +84,11 @@
   },
   "${modID}:HolyHammer": {
     "NAME": "神圣法槌",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。 NL 获得 !M! 层 领悟 。 NL ${modID}:sp"
   },
   "${modID}:CaffeineDependency": {
     "NAME": "咖啡上瘾",
-    "DESCRIPTION": "获得点 !M! 力量 。 NL 每回合开始时失去1点 力量，并获得 力量 等量 格挡 。 NL ${modID}:骑士"
+    "DESCRIPTION": "获得点 !M! 力量 。 NL 每回合开始时失去2点 力量，并获得等量 多层护甲 。 NL ${modID}:骑士"
   }
 
 }

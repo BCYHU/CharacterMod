@@ -47,7 +47,7 @@ public class ArrowStorm extends BaseCard{
                     public void update() {
                         AbstractMonster target = AbstractDungeon.getRandomMonster();
                         if (target !=null) {
-                            addToTop(new DamageAction(target, new DamageInfo(null, damage, DamageInfo.DamageType.THORNS),
+                            addToTop(new DamageAction(target, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
                                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                             addToTop(new ApplyPowerAction(target, p, new WeakPower(target, 1, false), 1));
                         }
@@ -60,7 +60,7 @@ public class ArrowStorm extends BaseCard{
                     public void update() {
                         AbstractMonster target = AbstractDungeon.getRandomMonster();
                         if (target !=null) {
-                            addToTop(new DamageAction(target, new DamageInfo(null, damage, DamageInfo.DamageType.THORNS),
+                            addToTop(new DamageAction(target, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
                                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                             addToTop(new ApplyPowerAction(target, p, new WeakPower(target, 1, false), 1));
                         }
