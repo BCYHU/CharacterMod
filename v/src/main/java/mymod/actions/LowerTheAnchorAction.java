@@ -21,10 +21,9 @@ public class LowerTheAnchorAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (m.hasPower(FlightPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(m, p, new FlightPower(m, -99)));
-        }
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        isDone = true;
+        addToBot(new ApplyPowerAction(m, p, new FlightPower(m, 2)));
+        this.isDone = true;
     }
+
 }

@@ -55,7 +55,7 @@
   },
   "${modID}:LowerTheAnchor": {
     "NAME": "疏通航道",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 结束敌人的 飞行 。 NL ${modID}:sp "
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予2层 飞行 。 NL ${modID}:sp "
   },
   "${modID}:RevolutionHammer": {
     "NAME": "焰缚灾锤",

@@ -21,7 +21,7 @@ public class LowerTheAnchor extends BaseCard {
 
     public LowerTheAnchor() {
         super(ID,info);
-        setDamage(10,4);
+        setDamage(12,6);
 
 
         tags.add(ModTag.Card_SP);
